@@ -1,1 +1,2 @@
-require("core.lazy")
+require("roland.lazy")
+
