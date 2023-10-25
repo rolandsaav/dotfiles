@@ -7,7 +7,6 @@ opt.shiftwidth = 4
 opt.smarttab = true
 opt.tabstop = 4
 
-opt.autochdir = true
 
 opt.hlsearch = false
 opt.incsearch = true
