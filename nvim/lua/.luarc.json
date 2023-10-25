@@ -13,5 +13,6 @@
         "/Users/rolandsaavedra/.local/share/nvim/lazy/telescope.nvim/lua",
         "/Users/rolandsaavedra/.config/nvim/lua",
         "${3rd}/luv/library"
-    ]
+    ],
+    "workspace.checkThirdParty": false
 }
