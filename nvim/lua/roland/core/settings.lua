@@ -1,4 +1,4 @@
-opt = vim.o
+local opt = vim.o
 opt.number = true
 opt.cmdheight = 0
 opt.rnu = true
