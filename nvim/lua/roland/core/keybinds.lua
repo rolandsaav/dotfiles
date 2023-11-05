@@ -12,3 +12,9 @@ vim.keymap.set("n", "<leader>td", function() require("trouble").toggle("document
 vim.keymap.set("n", "<leader>tq", function() require("trouble").toggle("quickfix") end)
 vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end)
 vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
+
+vim.keymap.set("n", "h", function() print("nope. Use something else.") end)
+vim.keymap.set("n", "j", function() print("Do you suck?") end)
+vim.keymap.set("n", "k", function() print("get a fucking grip") end)
+vim.keymap.set("n", "l", function() print("you might be the worst") end)
+
