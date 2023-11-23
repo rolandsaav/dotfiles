@@ -12,3 +12,13 @@ opt.hlsearch = false
 opt.incsearch = true
 
 opt.swapfile = false
+
+vim.diagnostic.config({
+	virtual_text = false,
+	underline = {
+		severity = {
+			min = vim.diagnostic.severity.HINT,
+			max = vim.diagnostic.severity.ERROR
+		}
+	}
+})
