@@ -13,4 +13,5 @@ vim.keymap.set("n", "<leader>t", function() require("trouble").toggle() end)
 vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
 
 vim.keymap.set("n", "<M-CR>", "<cmd>CodeActionMenu<CR>", {})
+vim.keymap.set("n", "<leader>i", "<cmd>CodeActionMenu<CR>", {})
 vim.keymap.set("n", "rr", "<cmd>CodeActionMenu<CR>", {})

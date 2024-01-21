@@ -13,7 +13,7 @@ return {
 			auto_install = true,
 			sync_install = false,
 			modules = {},
-			ignore_install = { "" }
+			ignore_install = { "latex" }
 		}
 	end
 }
