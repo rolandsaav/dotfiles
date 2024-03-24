@@ -1,33 +1,50 @@
 return {
     {
         "williamboman/mason.nvim",
+        lazy = false
     },
     {
-        "williamboman/mason-lspconfig.nvim"
+        "williamboman/mason-lspconfig.nvim",
+        lazy = false
     },
     {
-        "hrsh7th/cmp-nvim-lsp"
+        "hrsh7th/cmp-nvim-lsp",
+        lazy = false
     },
     {
-        "neovim/nvim-lspconfig"
+        "neovim/nvim-lspconfig",
+        lazy = false
     },
     {
         "L3MON4D3/LuaSnip",
         -- follow latest release.
         version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         -- install jsregexp (optional!).
-        build = "make install_jsregexp"
+        build = "make install_jsregexp",
+        lazy = false
     },
     {
-        'saadparwaiz1/cmp_luasnip'
+        'saadparwaiz1/cmp_luasnip',
+        lazy = false
     },
-    { "folke/neodev.nvim", opts = {} },
+    {
+        "folke/neodev.nvim",
+        opts = {},
+        lazy = true
+    },
+    {
+        'mrded/nvim-lsp-notify',
+        dependencies = { 'rcarriga/nvim-notify' },
+        config = function()
+            require('lsp-notify').setup({
+            })
+        end
+    },
     {
         "hrsh7th/nvim-cmp",
         config = function()
             local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-            require("neodev").setup({
-            })
+            -- require("neodev").setup({})
             local default_setup = function(server)
                 require('lspconfig')[server].setup({
                     capabilities = lsp_capabilities,
@@ -58,10 +75,8 @@ return {
                 unpack = unpack or table.unpack
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
                 return col ~= 0 and
-                vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+                    vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
             end
-
-
 
             cmp.setup({
                 sources = {
