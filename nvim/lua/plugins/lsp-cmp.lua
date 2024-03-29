@@ -57,12 +57,16 @@ return {
                 handlers = {
                     default_setup,
                     lua_ls = function()
+                        print("setting up lua_ls")
                         require('lspconfig').lua_ls.setup({
                             capabilities = lsp_capabilities,
-                            ---
-                            -- This is where you place
-                            -- your custom config
-                            ---
+                            settings = {
+                                Lua = {
+                                    diagnostics = {
+                                        globals = { 'vim' }
+                                    }
+                                }
+                            }
                         })
                     end,
                 },
