@@ -21,6 +21,17 @@ return {
         build = "make install_jsregexp"
     },
     {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- See the configuration section for more details
+                -- Load luvit types when the `vim.uv` word is found
+                { path = "luvit-meta/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+    {
         "hrsh7th/cmp-nvim-lsp",
     },
     {
@@ -53,6 +64,10 @@ return {
                     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 }),
                 sources = cmp.config.sources({
+                    {
+                        name = "lazydev",
+                        group_index = 0,
+                    },
                     { name = 'nvim_lsp' },
                     -- { name = 'vsnip' }, -- For vsnip users.
                     { name = 'luasnip' }, -- For luasnip users.
@@ -63,11 +78,27 @@ return {
                 })
             })
 
+            local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+            local formatOnSave = function(client, bufnr)
+                if client.supports_method("textDocument/formatting") then
+                    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        group = augroup,
+                        buffer = bufnr,
+                        callback = function()
+                            vim.lsp.buf.format()
+                        end,
+                    })
+                end
+            end
+
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             require("mason-lspconfig").setup_handlers {
                 function(server_name)
                     require("lspconfig")[server_name].setup({
                         capabilites = capabilities,
+                        on_attach = formatOnSave
                     })
                 end,
                 ["lua_ls"] = function()
@@ -79,7 +110,8 @@ return {
                                     globals = { "vim" }
                                 }
                             }
-                        }
+                        },
+                        on_attach = formatOnSave
                     }
                 end,
             }
