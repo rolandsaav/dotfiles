@@ -18,3 +18,5 @@ vim.opt.cmdheight = 0
 vim.opt.showbreak = "+++ "
 
 vim.opt.splitright = true
+
+vim.opt.termguicolors = true
