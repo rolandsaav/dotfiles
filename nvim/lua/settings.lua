@@ -20,3 +20,11 @@ vim.opt.cmdheight = 0
 vim.opt.splitright = true
 
 vim.opt.termguicolors = true
+
+-- autopairs
+
+vim.g.AutoPairsShortcutToggle = ''
+vim.g.AutoPairsShortcutJump = ''
+
+-- tabline
+vim.opt.showtabline = 0

@@ -31,7 +31,11 @@ vim.keymap.set('n', '<leader>ot', toggleTreeAndFocusIfClosed, { desc = "Toggle n
 
 -- Tabs
 
-vim.keymap.set('n', '<M-n>', '<cmd>tabnext<cr>', { desc = "Next tab" })
-vim.keymap.set('n', '<M-p>', '<cmd>tabprevious<cr>', { desc = "Previouse tab" })
+-- vim.keymap.set('n', '<M-n>', '<cmd>tabnext<cr>', { desc = "Next tab" })
+-- vim.keymap.set('n', '<M-p>', '<cmd>tabprevious<cr>', { desc = "Previouse tab" })
+
+vim.keymap.set('n', ']t', '<cmd>tabnext<cr>], {desc = "Next tab"}')
+vim.keymap.set('n', '[t', '<cmd>tabprevious<cr>', { desc = "Previous tab" })
+
 vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<cr>', { desc = "New tab" })
 vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<cr>', { desc = "Close tab" })
