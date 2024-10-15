@@ -14,28 +14,53 @@ vim.keymap.set('n', '<leader>fd', telescope.lsp_definitions, { desc = "Telescope
 vim.keymap.set('n', '<leader>fs', telescope.lsp_workspace_symbols, { desc = "Telescope lsp workspace symbols" })
 vim.keymap.set('n', '<leader>ft', telescope.lsp_type_definitions, { desc = "Telescope lsp type definitions" })
 vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { desc = "Rename symbol under cursor" })
+vim.keymap.set('n', '<leader>k', function() vim.diagnostic.open_float() end, { desc = "Show disagnostics" })
 
--- NvimTree
-local nvimtree = require("nvim-tree.api")
-
-local toggleTreeAndFocusIfClosed = function()
-    if nvimtree.tree.is_visible() then
-        nvimtree.tree.close()
+-- Neotree
+local manager = require("neo-tree.sources.manager")
+local renderer = require("neo-tree.ui.renderer")
+local command = require("neo-tree.command")
+local neotree_sources = { "filesystem", "document_symbols", "buffers" }
+local toggleTree = function(selectedSource)
+    local open = false
+    for _, source in ipairs(neotree_sources) do
+        local state = manager.get_state(source)
+        local window_exists = renderer.window_exists(state)
+        open = open or window_exists
+    end
+    if open then
+        command.execute {
+            action = "close"
+        }
     else
-        nvimtree.tree.toggle()
+        command.execute {
+            source = selectedSource
+        }
     end
 end
 
-
-vim.keymap.set('n', '<leader>ot', toggleTreeAndFocusIfClosed, { desc = "Toggle nvim tree" })
+vim.keymap.set('n', '<leader>ef', function() toggleTree("filesystem") end, { desc = "Open explorer" })
+vim.keymap.set('n', '<leader>es', function() toggleTree("document_symbols") end, { desc = "Open symbols" })
+vim.keymap.set('n', '<leader>eb', function() toggleTree("buffers") end, { desc = "Open symbols" })
 
 -- Tabs
 
 -- vim.keymap.set('n', '<M-n>', '<cmd>tabnext<cr>', { desc = "Next tab" })
 -- vim.keymap.set('n', '<M-p>', '<cmd>tabprevious<cr>', { desc = "Previouse tab" })
 
-vim.keymap.set('n', ']t', '<cmd>tabnext<cr>], {desc = "Next tab"}')
+vim.keymap.set('n', ']t', '<cmd>tabnext<cr>', { desc = "Next tab" })
 vim.keymap.set('n', '[t', '<cmd>tabprevious<cr>', { desc = "Previous tab" })
 
 vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<cr>', { desc = "New tab" })
 vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<cr>', { desc = "Close tab" })
+
+-- Trouble
+local trouble = require("trouble")
+
+vim.keymap.set('n', '<leader>eD', "<cmd>Trouble diagnostics toggle <cr>",
+    { desc = "Toggle Trouble diagnostics" })
+vim.keymap.set('n', '<leader>el', "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+    { desc = "Toggle Trouble LSP Definitions / refs" })
+vim.keymap.set('n', '<leader>ed', "<cmd>Trouble diagnostics toggle filter.buf=0 <cr>",
+    { desc = "Toggle Trouble LSP Definitions / refs" })
+vim.keymap.set('n', '<leader>eo', "<cmd>Trouble lsp_outgoing_calls toggle")
