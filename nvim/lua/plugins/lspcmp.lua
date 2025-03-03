@@ -100,6 +100,7 @@ return {
             end
 
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local lspconfig = require("lspconfig")
             require("mason-lspconfig").setup_handlers {
                 function(server_name)
                     require("lspconfig")[server_name].setup({
@@ -108,7 +109,6 @@ return {
                     })
                 end,
                 ["lua_ls"] = function()
-                    local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
                         settings = {
                             Lua = {
@@ -120,7 +120,15 @@ return {
                         on_attach = formatOnSave
                     }
                 end,
+                ["clangd"] = function()
+                    lspconfig.clangd.setup {
+                    }
+                end,
             }
+
+            -- we set up CCLS here outside the mason-lspconfig setup because Mason doesn't
+            -- handle CCLS
+            local lspconfig = require("lspconfig")
         end
     }
 }
