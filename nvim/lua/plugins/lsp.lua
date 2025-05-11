@@ -15,27 +15,27 @@ return {
 		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 		-- install jsregexp (optional!).
 		build = "make install_jsregexp",
-		config = function()
-			local ls = require("luasnip")
-			-- vim.keymap.set({ "i" }, "<C-K>", function() ls.expand() end, { silent = true })
-			-- vim.keymap.set({ "i", "s" }, "<C-L>", function() ls.jump(1) end, { silent = true })
-			-- vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(-1) end, { silent = true })
-			--
-			-- vim.keymap.set({ "i", "s" }, "<C-E>", function()
-			-- 	if ls.choice_active() then
-			-- 		ls.change_choice(1)
-			-- 	end
-			-- end, { silent = true })
-		end
 	},
 	{
 		"hrsh7th/cmp-nvim-lsp"
+	},
+	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
 	},
 	{
 		'hrsh7th/nvim-cmp',
 		event = 'InsertEnter',
 		config = function()
 			local cmp = require('cmp')
+			local luasnip = require("luasnip")
 
 			cmp.setup({
 				sources = {
@@ -43,9 +43,43 @@ return {
 					{ name = 'luasnip' },
 				},
 				mapping = cmp.mapping.preset.insert({
-					['<Tab>'] = cmp.mapping.complete(),
+					-- ['<Tab>'] = cmp.mapping.complete(),
 					['<C-u>'] = cmp.mapping.scroll_docs(-4),
 					['<C-d>'] = cmp.mapping.scroll_docs(4),
+					['<C-e>'] = cmp.mapping.abort(),
+					['<CR>'] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							if luasnip.expandable() then
+								luasnip.expand()
+							else
+								cmp.confirm({
+									select = true,
+								})
+							end
+						else
+							fallback()
+						end
+					end),
+
+					["<Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_next_item()
+						elseif luasnip.locally_jumpable(1) then
+							luasnip.jump(1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+
+					["<S-Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_prev_item()
+						elseif luasnip.locally_jumpable(-1) then
+							luasnip.jump(-1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
 				}),
 				snippet = {
 					expand = function(args)

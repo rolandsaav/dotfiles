@@ -1,6 +1,10 @@
+.DS_Store
 configstore/
 gcloud/
 raycast/
 neofetch/
 gh/
 tpm/
+Snap
+karabiner
+.DS_Store
