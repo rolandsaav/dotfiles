@@ -4,7 +4,7 @@ This is my living configuration repository.
 I also track the things I want to do here.
 
 ## TODO
-- [ ] Harpoon
+- [x] Harpoon
     I want 4-8 files bound to keys on my home row.
     its gonna be <leader>h[jkl;asdf]
 - [x] Lualine shows git info
@@ -15,3 +15,5 @@ I also track the things I want to do here.
 - [ ] Install and update scripts
 - [ ] Tmux sessionizer
 - [ ] Tools for Git worktree
+- [ ] Aerospace mac config
+- [ ] Starship????
