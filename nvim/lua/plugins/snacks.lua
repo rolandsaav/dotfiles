@@ -7,6 +7,7 @@ return {
 		picker = { enabled = true },
 		words = { enabled = true },
 		scroll = { enabled = true },
+		indent = { enabled = true },
 	},
 	keys = {
 		{ "<leader>fp", function() Snacks.picker() end,                                         desc = "Find Pickers" },
@@ -42,6 +43,19 @@ return {
 				end
 			end,
 			desc = "Toggle smooth scrolling"
+		},
+		{
+			"<leader>ti",
+			function()
+				if Snacks.indent.enabled then
+					Snacks.indent.disable()
+				Snacks.notifier.notify("Disable indent guide")
+				else
+					Snacks.indent.enable()
+				Snacks.notifier.notify("Enable indent guide")
+				end
+			end,
+			desc = "Toggle indent guide"
 		},
 	}
 }
