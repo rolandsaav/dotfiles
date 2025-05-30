@@ -11,3 +11,4 @@
 !aerospace
 !aerospace/**
 *.DS_Store
+!README.md
