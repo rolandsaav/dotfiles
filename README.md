@@ -7,7 +7,7 @@ I also track the things I want to do here.
 - [ ] Harpoon
     I want 4-8 files bound to keys on my home row.
     its gonna be <leader>h[jkl;asdf]
-- [ ] Lualine shows git info
+- [x] Lualine shows git info
 - [ ] Tmux status bar shows git info
 - [ ] Shell prompt shows git info
 - [ ] Nvim code companion
