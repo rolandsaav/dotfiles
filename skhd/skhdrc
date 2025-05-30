@@ -1,7 +1,0 @@
-# open terminal, blazingly fast compared to iTerm/Hyper
-# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-
-hyper - r : skhd -r;\
-            yabai --restart-service;\
-            echo "reload yabai and skhd on $(date '+%A %W %Y %X')" >> ~/mylogs.txt
-

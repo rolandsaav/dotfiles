@@ -3,6 +3,10 @@
 
 !.zshrc
 !nvim
+!nvim/**
 !kitty
+!kitty/**
 !tmux
+!tmux/**
 !aerospace
+!aerospace/**
