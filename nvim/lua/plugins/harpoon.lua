@@ -19,5 +19,8 @@ return {
 		vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end)
 		vim.keymap.set("n", "<C-l>", function() harpoon:list():select(3) end)
 		vim.keymap.set("n", "<C-p>", function() harpoon:list():select(4) end)
+
+		-- I can make a lualine plugin to show what files are harpooned and the active file
+		-- lua print(vim.inspect(require("harpoon"):list()))
 	end
 }
