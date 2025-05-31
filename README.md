@@ -23,3 +23,4 @@ I also track the things I want to do here.
 - [ ] Tools for Git worktree
 - [ ] Aerospace mac config
 - [ ] Starship????
+- [ ] Blink completion
