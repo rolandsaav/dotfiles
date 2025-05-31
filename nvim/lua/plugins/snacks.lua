@@ -8,6 +8,7 @@ return {
 		words = { enabled = true },
 		scroll = { enabled = true },
 		indent = { enabled = true },
+		explorer = { enabled = true, replace_netrw = true},
 	},
 	keys = {
 		{ "<leader>fp", function() Snacks.picker() end,                                         desc = "Find Pickers" },
