@@ -3,6 +3,12 @@ This is my living configuration repository.
 
 I also track the things I want to do here.
 
+## Dependencies
+- ripgrep
+- fd
+- fzf
+
+
 ## TODO
 - [ ] Harpoon
     I want 4-8 files bound to keys on my home row.
@@ -15,3 +21,4 @@ I also track the things I want to do here.
 - [ ] Install and update scripts
 - [ ] Tmux sessionizer
 - [ ] Tools for Git worktree
+
