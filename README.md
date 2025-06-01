@@ -3,6 +3,15 @@ This is my living configuration repository.
 
 I also track the things I want to do here.
 
+# Instructions
+```sh
+git clone https://github.com/rolandsaav/dotfiles.git ~/dotfiles
+cd dotfiles
+chmod +x macinit.sh
+./macinit.sh
+
+```
+
 ## Dependencies
 - ripgrep
 - fd
@@ -17,10 +26,12 @@ I also track the things I want to do here.
 - [ ] Tmux status bar shows git info
 - [ ] Shell prompt shows git info
 - [ ] Nvim code companion
-- [ ] Aliases for git commands
-- [ ] Install and update scripts
+- [x] Aliases for git commands
+- [x] Install and update scripts
+    - still need update
 - [ ] Tmux sessionizer
 - [ ] Tools for Git worktree
 - [ ] Aerospace mac config
 - [ ] Starship????
 - [ ] Blink completion
+- [ ] Test input script
