@@ -13,13 +13,15 @@ return {
 	keys = {
 		{ "<leader>fp", function() Snacks.picker() end,                                         desc = "Find Pickers" },
 		{ "<leader>ff", function() Snacks.picker.git_files() end,                                   desc = "Find Git Files" },
-		{ "<leader>fs", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
 		{ "<leader>fh", function() Snacks.picker.help() end,                                   desc = "Smart Find Files" },
 		{ "-",          function() Snacks.picker.explorer() end,                                desc = "File Explorer" },
 		{ "<leader>/",  function() Snacks.picker.grep() end,                                    desc = "Grep" },
 		{ "<leader>fb", function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
 		{ "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-		{ "<leader>fg", function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
+		{ "<leader>fg", function() Snacks.picker.grep() end,                               desc = "Grep" },
+		{ "<leader>lg", function() Snacks.picker.lazygit() end,                               desc = "Lazygit" },
+		{ "<leader>fD", function() Snacks.picker.diagnostics() end,                               desc = "Lazygit" },
+		{ "<leader>fd", function() Snacks.picker.diagnostics_buffer() end,                               desc = "Lazygit" },
 		{
 			"<leader>td",
 			function()
