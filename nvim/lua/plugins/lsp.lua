@@ -3,11 +3,14 @@ return {
 		"williamboman/mason.nvim",
 		lazy = false,
 		opts = {},
+		enabled = false,
+		enabled = false,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 		opts = {},
+		enabled = false,
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -15,9 +18,11 @@ return {
 		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
 		-- install jsregexp (optional!).
 		build = "make install_jsregexp",
+		enabled = false,
 	},
 	{
 		"hrsh7th/cmp-nvim-lsp"
+		enabled = false,
 	},
 	{
 		"folke/lazydev.nvim",
@@ -29,6 +34,7 @@ return {
 				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 			},
 		},
+		enabled = false,
 	},
 	{
 		'hrsh7th/nvim-cmp',
@@ -92,6 +98,7 @@ return {
 				},
 			})
 		end
+		enabled = false,
 	},
 	{
 		'neovim/nvim-lspconfig',
@@ -143,5 +150,6 @@ return {
 				}
 			})
 		end
+		enabled = false,
 	}
 }
