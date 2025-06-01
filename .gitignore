@@ -6,7 +6,6 @@
 !macinit.sh
 !nvim
 !nvim/**
-!kitty
 !kitty/**
 !tmux
 !tmux/**

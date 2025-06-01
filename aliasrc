@@ -1,6 +1,13 @@
 alias projects="~/Documents/projects"
 alias config="~/.config"
+alias dotfiles="~/dotfiles"
 
 # Git Aliases
 alias gs="git status --short"
 alias gl="git log --oneline"
+alias ga="git add"
+alias gaa="git add ."
+# normal
+alias gsn="git status"
+alias gln="git log"
+

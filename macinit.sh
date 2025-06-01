@@ -17,5 +17,7 @@ ln -sf "$HOME/dotfiles/nvim" ~/.config/nvim
 ln -sf "$HOME/dotfiles/tmux" ~/.config/tmux.conf
 ln -sf "$HOME/dotfiles/aerospace" ~/.config/aerospace.toml
 ln -sf "$HOME/dotfiles/kitty" ~/.config/kitty
+ln -sf "$HOME/dotfiles/aliasrc" ~/.config/aliasrc
+
 
 exec "$SHELL"
