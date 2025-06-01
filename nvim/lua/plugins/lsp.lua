@@ -3,27 +3,15 @@ return {
 		"williamboman/mason.nvim",
 		lazy = false,
 		opts = {},
-		enabled = false,
-		enabled = false,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 		opts = {},
-		enabled = false,
 	},
-	{
-		"L3MON4D3/LuaSnip",
-		-- follow latest release.
-		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-		-- install jsregexp (optional!).
-		build = "make install_jsregexp",
-		enabled = false,
-	},
-	{
-		"hrsh7th/cmp-nvim-lsp"
-		enabled = false,
-	},
+	-- {
+	-- 	"hrsh7th/cmp-nvim-lsp"
+	-- },
 	{
 		"folke/lazydev.nvim",
 		ft = "lua", -- only load on lua files
@@ -34,78 +22,77 @@ return {
 				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 			},
 		},
-		enabled = false,
 	},
-	{
-		'hrsh7th/nvim-cmp',
-		event = 'InsertEnter',
-		config = function()
-			local cmp = require('cmp')
-			local luasnip = require("luasnip")
-
-			cmp.setup({
-				sources = {
-					{ name = 'nvim_lsp' },
-					{ name = 'luasnip' },
-				},
-				mapping = cmp.mapping.preset.insert({
-					-- ['<Tab>'] = cmp.mapping.complete(),
-					['<C-u>'] = cmp.mapping.scroll_docs(-4),
-					['<C-d>'] = cmp.mapping.scroll_docs(4),
-					['<C-e>'] = cmp.mapping.abort(),
-					['<CR>'] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							if luasnip.expandable() then
-								luasnip.expand()
-							else
-								cmp.confirm({
-									select = true,
-								})
-							end
-						else
-							fallback()
-						end
-					end),
-
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.locally_jumpable(1) then
-							luasnip.jump(1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-						elseif luasnip.locally_jumpable(-1) then
-							luasnip.jump(-1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-				}),
-				snippet = {
-					expand = function(args)
-						require('luasnip').lsp_expand(args.body)
-					end,
-				},
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				},
-			})
-		end
-		enabled = false,
-	},
+	-- {
+	-- 	'hrsh7th/nvim-cmp',
+	-- 	event = 'InsertEnter',
+	-- 	enabled = false,
+	-- 	config = function()
+	-- 		local cmp = require('cmp')
+	-- 		local luasnip = require("luasnip")
+	--
+	-- 		cmp.setup({
+	-- 			sources = {
+	-- 				{ name = 'nvim_lsp' },
+	-- 				{ name = 'luasnip' },
+	-- 			},
+	-- 			mapping = cmp.mapping.preset.insert({
+	-- 				-- ['<Tab>'] = cmp.mapping.complete(),
+	-- 				['<C-u>'] = cmp.mapping.scroll_docs(-4),
+	-- 				['<C-d>'] = cmp.mapping.scroll_docs(4),
+	-- 				['<C-e>'] = cmp.mapping.abort(),
+	-- 				['<CR>'] = cmp.mapping(function(fallback)
+	-- 					if cmp.visible() then
+	-- 						if luasnip.expandable() then
+	-- 							luasnip.expand()
+	-- 						else
+	-- 							cmp.confirm({
+	-- 								select = true,
+	-- 							})
+	-- 						end
+	-- 					else
+	-- 						fallback()
+	-- 					end
+	-- 				end),
+	--
+	-- 				["<Tab>"] = cmp.mapping(function(fallback)
+	-- 					if cmp.visible() then
+	-- 						cmp.select_next_item()
+	-- 					elseif luasnip.locally_jumpable(1) then
+	-- 						luasnip.jump(1)
+	-- 					else
+	-- 						fallback()
+	-- 					end
+	-- 				end, { "i", "s" }),
+	--
+	-- 				["<S-Tab>"] = cmp.mapping(function(fallback)
+	-- 					if cmp.visible() then
+	-- 						cmp.select_prev_item()
+	-- 					elseif luasnip.locally_jumpable(-1) then
+	-- 						luasnip.jump(-1)
+	-- 					else
+	-- 						fallback()
+	-- 					end
+	-- 				end, { "i", "s" }),
+	-- 			}),
+	-- 			snippet = {
+	-- 				expand = function(args)
+	-- 					require('luasnip').lsp_expand(args.body)
+	-- 				end,
+	-- 			},
+	-- 			window = {
+	-- 				completion = cmp.config.window.bordered(),
+	-- 				documentation = cmp.config.window.bordered(),
+	-- 			},
+	-- 		})
+	-- 	end
+	-- },
 	{
 		'neovim/nvim-lspconfig',
 		cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
 		event = { 'BufReadPre', 'BufNewFile' },
 		dependencies = {
-			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ "saghen/blink.cmp" },
 			{ 'williamboman/mason.nvim' },
 			{ 'williamboman/mason-lspconfig.nvim' },
 		},
@@ -115,7 +102,7 @@ return {
 			vim.opt.signcolumn = 'yes'
 		end,
 		config = function()
-			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				desc = 'LSP actions',
@@ -150,6 +137,5 @@ return {
 				}
 			})
 		end
-		enabled = false,
 	}
 }
