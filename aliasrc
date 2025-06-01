@@ -1,2 +1,6 @@
 alias projects="~/Documents/projects"
 alias config="~/.config"
+
+# Git Aliases
+alias gs="git status --short"
+alias gl="git log --oneline"
