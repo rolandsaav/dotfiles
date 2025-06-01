@@ -1,15 +1,2 @@
-*
-!.gitignore
-
-!zshrc
-!aliasrc
-!macinit.sh
-!nvim
-!nvim/**
-!kitty/**
-!tmux
-!tmux/**
-!aerospace
-!aerospace/**
+notes.md
 *.DS_Store
-!README.md
