@@ -87,3 +87,7 @@ git config --global core.editor "nvim -c 'set ft=gitcommit'"
 
 # ENV VARS
 EDITOR=nvim
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+eval "$(starship init zsh)"
