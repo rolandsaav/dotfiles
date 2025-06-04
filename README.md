@@ -37,3 +37,7 @@ chmod +x macinit.sh
 - [ ] Test input script
 - [ ] lualine plugin to show current active marks in file and global
     - ill p just use global marks and have them be ABCD but ill leave room to map abcd locally
+- [ ] Fix obsidian plugin (p just remove it)
+- [ ] Grugfar
+- [ ] mini.nvim surround and commenting
+- [ ] fuGitive?
