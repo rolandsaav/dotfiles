@@ -6,7 +6,7 @@ return {
 	opts = {
 		picker = { enabled = true },
 		words = { enabled = true },
-		scroll = { enabled = true },
+		scroll = { enabled = false },
 		indent = { enabled = true },
 		explorer = { enabled = true, replace_netrw = true},
 	},
