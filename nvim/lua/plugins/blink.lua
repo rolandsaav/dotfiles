@@ -1,8 +1,8 @@
 return {
-	'saghen/blink.cmp',
-	dependencies = { 'rafamadriz/friendly-snippets' },
+	"saghen/blink.cmp",
+	dependencies = { "rafamadriz/friendly-snippets" },
 
-	version = '1.*',
+	version = "1.*",
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
@@ -19,27 +19,32 @@ return {
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
-			preset = 'enter',
-			['<C-s>'] = {
-				"show_signature", "hide_signature"
+			preset = "enter",
+			["<C-s>"] = {
+				"show_signature",
+				"hide_signature",
 			},
-			['<C-h>'] = {
-				"show_documentation", "hide_documentation"
+			["<C-h>"] = {
+				"show_documentation",
+				"hide_documentation",
 			},
 		},
 		completion = {
-			menu = { border = "single" },
+			menu = {
+				border = "rounded",
+				winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+			},
 			documentation = {
-				window = { border = "single" },
-			}
+				window = { border = "rounded" },
+			},
 		},
 		signature = {
 			enabled = true,
-			window = { border = "single" }
+			window = { border = "rounded" },
 		},
 		appearance = {
 			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
-		}
+		},
 	},
 }
