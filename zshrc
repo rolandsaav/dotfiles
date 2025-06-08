@@ -82,6 +82,12 @@ bindkey '^e' edit-command-line
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Pyenv 
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
 # GIT Stuff
 git config --global core.editor "nvim -c 'set ft=gitcommit'"
 
