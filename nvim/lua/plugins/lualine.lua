@@ -70,7 +70,7 @@ return {
 				lualine_b = { 'branch', 'diff', 'diagnostics' },
 				lualine_c = { 'filename' },
 				lualine_x = {
-					globalMarks,
+					testComponent.globalMarks({ delimiter = " ", prefix = "Global Marks:", letters = "QWER" }),
 					testComponent.localMarks({ delimiter = " ^ " })
 				},
 				lualine_y = { 'tabs' },
