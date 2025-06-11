@@ -2,11 +2,11 @@ return {
 	'nvim-lualine/lualine.nvim',
 	dependencies = { 'nvim-tree/nvim-web-devicons' },
 	config = function()
-		local function hello()
-			return [[hello world]]
-		end
 		local markNames = "ABCD"
 		-- Component needs to refresh when marks are set
+
+		local testComponent = require("extensions.marks")
+		testComponent.localMarks({ delimiter = " ^ " })
 
 		function localMarks()
 			local localMarkNames = markNames:lower()
@@ -69,7 +69,10 @@ return {
 				lualine_a = { 'mode' },
 				lualine_b = { 'branch', 'diff', 'diagnostics' },
 				lualine_c = { 'filename' },
-				lualine_x = { globalMarks, localMarks },
+				lualine_x = {
+					globalMarks,
+					testComponent.localMarks({ delimiter = " ^ " })
+				},
 				lualine_y = { 'tabs' },
 				lualine_z = { 'location' }
 			},
