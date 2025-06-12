@@ -30,9 +30,8 @@ return {
 			{ 'williamboman/mason-lspconfig.nvim' },
 		},
 		init = function()
-			-- Reserve a space in the gutter
-			-- This will avoid an annoying layout shift in the screen
-			vim.opt.signcolumn = 'yes'
+			-- Reserve a space in the gutter This will avoid an annoying layout shift in the screen
+			-- vim.opt.signcolumn = 'yes'
 		end,
 		config = function()
 			local capabilities = require('blink.cmp').get_lsp_capabilities()
@@ -76,6 +75,33 @@ return {
 					function(server_name)
 						require('lspconfig')[server_name].setup({
 							capabilities = capabilities
+						})
+					end,
+
+					["lua_ls"] = function()
+						require("lspconfig").lua_ls.setup({
+							capabilities = capabilities,
+							settings = {
+								Lua = {
+									runtime = {
+										version = "LuaJIT"
+									},
+									diagnostics = {
+										globals = { "vim" }
+									},
+									workspace = {
+										library = vim.api.nvim_get_runtime_file("", true),
+										checkThirdParty = false,
+									},
+									completion = {
+										callSnippet = "Replace",
+									},
+									hint = {
+										enable = true,
+										setType = true,
+									},
+								}
+							}
 						})
 					end,
 				}
