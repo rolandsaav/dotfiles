@@ -19,7 +19,7 @@ return {
 		{ "<leader>fb", function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
 		{ "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
 		{ "<leader>fg", function() Snacks.picker.grep() end,                               desc = "Grep" },
-		{ "<leader>lg", function() Snacks.picker.lazygit() end,                               desc = "Lazygit" },
+		{ "<leader>lg", function() Snacks.lazygit() end,                               desc = "Lazygit" },
 		{ "<leader>fD", function() Snacks.picker.diagnostics() end,                               desc = "Lazygit" },
 		{ "<leader>fd", function() Snacks.picker.diagnostics_buffer() end,                               desc = "Lazygit" },
 		{
@@ -61,6 +61,19 @@ return {
 				end
 			end,
 			desc = "Toggle indent guide"
+		},
+		{
+			"<leader>to",
+			function()
+				if Snacks.util.is_transparent() then
+					vim.cmd([[hi normal guibg=NONE]])
+				Snacks.notifier.notify("Enable transparency")
+				else
+					vim.cmd([[hi normal guibg=bg]])
+				Snacks.notifier.notify("Disable Transparency")
+				end
+			end,
+			desc = "Toggle background transparency"
 		},
 	}
 }
