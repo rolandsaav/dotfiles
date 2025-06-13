@@ -15,3 +15,7 @@ alias gln="git log"
 alias gvd='nvim -c "DiffviewOpen"'
 alias gvdf='nvim -c "DiffviewFileHistory"'
 
+alias rohome="cd ~/git/roblox"
+alias engine="cd ~/git/roblox/game-engine"
+
+alias lg="lazygit"
