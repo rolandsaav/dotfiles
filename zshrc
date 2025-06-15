@@ -96,4 +96,6 @@ EDITOR=nvim
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
 
+export FIREFOX_PATH='~/Library/Application Support/Firefox/Profiles/comz8kvj.dev-edition-default'
+
 eval "$(starship init zsh)"
