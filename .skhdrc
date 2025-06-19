@@ -1,0 +1,9 @@
+# cmd + alt + ctrl - o -> : open .
+
+alt - n [
+    "kitty"       : echo "hello kitty"
+    "alacritty"   : echo "hello everyone"
+    "qutebrowser" : echo "hello qutebrowser"
+    "terminal"    ~
+    "finder"      : false
+]

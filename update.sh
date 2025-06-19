@@ -20,4 +20,10 @@ ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 rm -rf ~/.config/sketchybar
 ln -sf ~/dotfiles/sketchybar ~/.config/sketchybar
 
+rm -rf ~/.config/alacritty
+ln -sf ~/dotfiles/alacritty ~/.config/alacritty
+
+rm -f ~/.config/.skhdrc
+ln -sf ~/dotfiles/.skhdrc ~/.config/.skhdrc
+
 exec $SHELL
