@@ -102,6 +102,13 @@ cmd-alt-ctrl-up = 'focus-monitor up'
 # ZOOOOOOOOM
 cmd-alt-ctrl-z = 'fullscreen'
 
+# Float
+cmd-alt-ctrl-f = 'layout floating'
+
+# Tiles 
+cmd-alt-ctrl-comma = ['layout h_tiles v_tiles']
+cmd-alt-ctrl-period = ['layout h_accordion v_accordion']
+
 # NEED Command modes to rearrange stuff in accordion
 # And to move stuff to windows? Not an obstacle if super easy to move modes
 
