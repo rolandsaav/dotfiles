@@ -2,6 +2,7 @@
 decorations = "None"
 blur = false
 opacity = 0.9
+option_as_alt = "Both"
 
 [font]
 size = 18
