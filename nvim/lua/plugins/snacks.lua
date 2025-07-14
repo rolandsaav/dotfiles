@@ -9,6 +9,7 @@ return {
 		scroll = { enabled = false },
 		indent = { enabled = true },
 		explorer = { enabled = true, replace_netrw = true},
+		statuscolumn = {}
 	},
 	keys = {
 		{ "<leader>fp", function() Snacks.picker() end,                                         desc = "Find Pickers" },
