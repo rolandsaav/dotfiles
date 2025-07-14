@@ -16,4 +16,4 @@ vim.o.softtabstop = 4
 vim.o.expandtab = false
 
 -- text rendering
-vim.o.conceallevel = 1
+vim.o.conceallevel = 0
