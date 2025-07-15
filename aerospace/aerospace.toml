@@ -88,8 +88,8 @@ shift-cmd-alt-ctrl-8 = 'move-node-to-workspace 8'
 shift-cmd-alt-ctrl-9 = 'move-node-to-workspace 9'
 shift-cmd-alt-ctrl-0 = 'move-node-to-workspace 0'
 
-shift-cmd-alt-ctrl-n = 'move-node-to-workspace --wrap-around next'
-shift-cmd-alt-ctrl-p = 'move-node-to-workspace --wrap-around prev'
+# shift-cmd-alt-ctrl-n = 'move-node-to-workspace --wrap-around next'
+# shift-cmd-alt-ctrl-p = 'move-node-to-workspace --wrap-around prev'
 
 # Monitors use arrows?
 # Want my workflow to be Focus monitor -> Summon Workspace
@@ -98,6 +98,9 @@ cmd-alt-ctrl-left = 'focus-monitor left'
 cmd-alt-ctrl-right = 'focus-monitor right'
 cmd-alt-ctrl-down = 'focus-monitor down'
 cmd-alt-ctrl-up = 'focus-monitor up'
+
+shift-cmd-alt-ctrl-n = 'move-node-to-monitor --focus-follows-window next'
+shift-cmd-alt-ctrl-p = 'move-node-to-monitor --focus-follows-window prev'
 
 # ZOOOOOOOOM
 cmd-alt-ctrl-z = 'fullscreen'
