@@ -14,6 +14,7 @@ return {
 	keys = {
 		{ "<leader>fp", function() Snacks.picker() end,                                         desc = "Find Pickers" },
 		{ "<leader>ff", function() Snacks.picker.git_files() end,                                   desc = "Find Git Files" },
+		{ "<leader>fF", function() Snacks.picker.files() end,                                   desc = "Find Files" },
 		{ "<leader>fh", function() Snacks.picker.help() end,                                   desc = "Smart Find Files" },
 		{ "-",          function() Snacks.picker.explorer() end,                                desc = "File Explorer" },
 		{ "<leader>/",  function() Snacks.picker.grep() end,                                    desc = "Grep" },
