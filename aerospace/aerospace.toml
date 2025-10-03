@@ -119,7 +119,7 @@ shift-cmd-alt-ctrl-p = 'move-node-to-monitor --focus-follows-window prev'
 cmd-alt-ctrl-z = 'fullscreen'
 
 # Float
-cmd-alt-ctrl-f = 'layout floating'
+cmd-alt-ctrl-f = 'layout floating tiling'
 
 # Tiles 
 cmd-alt-ctrl-comma = ['layout h_tiles v_tiles']
