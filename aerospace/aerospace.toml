@@ -123,8 +123,17 @@ cmd-alt-ctrl-e = 'layout tiles horizontal vertical'
 
 # Mode 
 cmd-alt-ctrl-enter = 'mode service'
-
 cmd-alt-ctrl-r = 'mode resize'
+
+# Setting all windows float by default. 
+# As I use more apps, I'll create rules for them
+[[on-window-detected]]
+check-further-callbacks = true
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ['layout tiling',' move-node-to-workspace 4']
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
