@@ -135,6 +135,30 @@ run = 'layout floating'
 if.app-id = 'com.spotify.client'
 run = ['layout tiling',' move-node-to-workspace 4']
 
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = ['layout tiling',' move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['layout tiling',' move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['layout floating',' move-node-to-workspace 3']
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.floorp'
+run = ['layout tiling',' move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = ['layout tiling', 'move-node-to-workspace 1']
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
