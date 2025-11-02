@@ -18,7 +18,9 @@ DIRS=(
 for dir in "${DIRS[@]}"; do
 	src="$base_dir/$dir"
 	dest="$HOME/.config/$dir"
-	ln -sf $src $dest
+	echo $src
+	echo $dest
+	ln -sfn "$src" "$dest"
 done
 
 echo "Bootstrapped"
