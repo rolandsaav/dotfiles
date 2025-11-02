@@ -3,6 +3,8 @@
 DIRS=(
 	~/Documents/projects/
 	~/Documents/projects/tutorials/
+	~/.config
+	~/dotfiles
 )
 
 selected=$(
