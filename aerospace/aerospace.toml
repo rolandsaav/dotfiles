@@ -35,10 +35,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 [gaps]
 inner.horizontal = 8
 inner.vertical =   8
-outer.left =       4
-outer.bottom =     4
-outer.top =        4
-outer.right =      4
+outer.left =       [{monitor."ULTRA" = 0},4]
+outer.bottom =     [{monitor."ULTRA" = 0},4]
+outer.top =        [{monitor."ULTRA" = 44},4]
+outer.right =      [{monitor."ULTRA" = 0},4]
 
 [mode.main.binding]
 # Move workspaces

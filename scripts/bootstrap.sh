@@ -13,6 +13,7 @@ DIRS=(
 	scripts
 	sketchybar
 	wallpapers
+	tmux
 )
 
 for dir in "${DIRS[@]}"; do
