@@ -19,24 +19,23 @@ return {
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
-			preset = "enter",
-			["<C-s>"] = {
-				"show_signature",
-				"hide_signature",
-			},
-			["<C-h>"] = {
-				"show_documentation",
-				"hide_documentation",
-			},
+			preset = "default",
+			['<CR>'] = { 'accept', 'fallback' },
 		},
 		completion = {
 			menu = {
 				border = "rounded",
-				winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
+				winhighlight =
+				"Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
 			},
 			documentation = {
 				window = { border = "rounded" },
 			},
+			accept = {
+				auto_brackets = {
+					enabled = true
+				}
+			}
 		},
 		signature = {
 			enabled = true,

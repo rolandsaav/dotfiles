@@ -92,3 +92,10 @@ eval "$(starship init zsh)"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
+
+# bun completions
+[ -s "/Users/rolandsaavedra/.bun/_bun" ] && source "/Users/rolandsaavedra/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
