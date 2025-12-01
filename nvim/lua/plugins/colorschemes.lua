@@ -1,27 +1,14 @@
 return {
+	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = 
 	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
-			require("gruvbox").setup({
-				contrast = "hard",
-				dim_inactive = false,
-				transparent_mode = true
-			})
-		end
+		terminal_colors = true,
+		contrast = "hard",
+		transparent_mode = false,
 	},
-	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{
-		"tanvirtin/monokai.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require('monokai').setup { palette = require('monokai').pro }
-		end
-	}
+	init = function ()
+		vim.o.background = "dark" -- or "light" for light mode
+		vim.cmd([[colorscheme gruvbox]])
+	end,
+	
+}
 }
