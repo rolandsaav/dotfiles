@@ -1,7 +1,7 @@
 [window]
 decorations = "Buttonless"
 blur = false
-opacity = 0.9
+opacity = 1
 option_as_alt = "Both"
 
 [font]
