@@ -2,39 +2,32 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		branch = "main"
-		-- opts = {
-		-- 	ensure_installed = { "c", "lua", "python", "vimdoc" },
-		-- 	auto_install = true,
-		-- 	highlight = {
-		-- 		enable = true,
-		-- 	},
-		-- },
-		-- config = function()
-		-- 	treesitter = require("nvim-treesitter")
-		-- 	treesitter.setup {
-		-- 		ensure_installed = { "c", "lua", "python", "vimdoc" },
-		-- 		auto_install = true,
-		-- 		highlight = {
-		-- 			enable = true,
-		-- 		},
-		-- 	}
-		-- end
+		branch = "main",
 	},
 	{
 		"MeanderingProgrammer/treesitter-modules.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		opts = {
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<A-o>",
-					node_incremental = "<A-o>",
-					scope_incremental = "<A-O>",
-					node_decremental = "<A-i>",
+		config = function()
+			require("treesitter-modules").setup {
+				incremental_selection = {
+					enable = true,
+					keymaps = {
+						init_selection = "<A-o>",
+						node_incremental = "<A-o>",
+						scope_incremental = "<A-O>",
+						node_decremental = "<A-i>",
+					},
 				},
-			},
-		},
-
+				highlight = {
+					enable = true,
+					disable = false,
+					-- setting this to true will run `:h syntax` and tree-sitter at the same time
+					-- set this to `true` if you depend on 'syntax' being enabled
+					-- using this option may slow down your editor, and duplicate highlights
+					-- instead of `true` it can also be a list of languages
+					additional_vim_regex_highlighting = false,
+				}
+			}
+		end
 	}
 }
