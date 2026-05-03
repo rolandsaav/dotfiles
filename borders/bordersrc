@@ -1,7 +1,9 @@
 #!/bin/bash
 
 options=(
-	blacklist="alacritty"
+	active_color=0xffb16286
+	inactive_color=0x00000000
+	width=6
 )
 
 borders "${options[@]}"
