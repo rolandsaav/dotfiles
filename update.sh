@@ -26,4 +26,7 @@ ln -sf ~/dotfiles/alacritty ~/.config/alacritty
 rm -f ~/.config/.skhdrc
 ln -sf ~/dotfiles/.skhdrc ~/.config/.skhdrc
 
+rm -f !/.config/ghostty
+ln -sf ~/dotfiles/ghostty ~/.config/ghostty
+
 exec $SHELL

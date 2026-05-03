@@ -1,0 +1,74 @@
+# App focus
+cmd + alt + ctrl - g                 : komorebic eager-focus Ghostty
+cmd + alt + ctrl - f                 : komorebic eager-focus Floorp
+cmd + alt + ctrl - o                 : komorebic eager-focus Obsidian
+
+# Focus windows
+cmd + alt + ctrl - h                 : komorebic focus left
+cmd + alt + ctrl - j                 : komorebic focus down
+cmd + alt + ctrl - k                 : komorebic focus up
+cmd + alt + ctrl - l                 : komorebic focus right
+cmd + alt + ctrl + shift - 0x21      : komorebic cycle-focus previous # 0x21 is [
+cmd + alt + ctrl + shift - 0x1E      : komorebic cycle-focus next # 0x1E is ]
+
+# Move windows
+cmd + alt + ctrl + shift - h         : komorebic move left
+cmd + alt + ctrl + shift - j         : komorebic move down
+cmd + alt + ctrl + shift - k         : komorebic move up
+cmd + alt + ctrl + shift - l         : komorebic move right
+cmd + alt + ctrl + shift - return    : komorebic promote
+
+# Stack windows
+cmd + alt + ctrl - left              : komorebic stack left
+cmd + alt + ctrl - down              : komorebic stack down
+cmd + alt + ctrl - up                : komorebic stack up
+cmd + alt + ctrl - right             : komorebic stack right
+cmd + alt + ctrl - 0x29              : komorebic unstack # 0x29 is ;
+cmd + alt + ctrl - 0x21              : komorebic cycle-stack previous # 0x21 is [
+cmd + alt + ctrl - 0x1E              : komorebic cycle-stack next # 0x1E is ]
+
+# Workspace layer
+cmd + alt + ctrl + shift - 0x29      : komorebic toggle-workspace-layer # 0x29 is ;
+
+# Resize
+cmd + alt + ctrl - 0x18              : komorebic resize-axis horizontal increase # 0x18 is +
+cmd + alt + ctrl - 0x1B              : komorebic resize-axis horizontal decrease # 0x1B is -
+cmd + alt + ctrl + shift - 0x18      : komorebic resize-axis vertical increase
+cmd + alt + ctrl + shift - 0x1B      : komorebic resize-axis vertical decrease
+
+# Manipulate windows
+cmd + alt + ctrl - t                 : komorebic toggle-float
+cmd + alt + ctrl + shift - t         : komorebic toggle-workspace-float-override
+cmd + alt + ctrl + shift - f         : komorebic toggle-monocle
+
+# Window manager options
+cmd + alt + ctrl + shift - r         : komorebic retile
+cmd + alt + ctrl - p                 : komorebic toggle-pause
+cmd + alt + ctrl - 0                 : komorebic toggle-window-container-behaviour
+
+# Layouts
+cmd + alt + ctrl - x                 : komorebic flip-layout horizontal
+cmd + alt + ctrl - y                 : komorebic flip-layout vertical
+cmd + alt + ctrl + shift - x         : komorebic session-float-rule
+
+# Workspaces
+cmd + alt + ctrl - 1                 : komorebic focus-workspace 0
+cmd + alt + ctrl - 2                 : komorebic focus-workspace 1
+cmd + alt + ctrl - 3                 : komorebic focus-workspace 2
+cmd + alt + ctrl - 4                 : komorebic focus-workspace 3
+cmd + alt + ctrl - 5                 : komorebic focus-workspace 4
+cmd + alt + ctrl - 6                 : komorebic focus-workspace 5
+cmd + alt + ctrl - 7                 : komorebic focus-workspace 6
+cmd + alt + ctrl - 8                 : komorebic focus-workspace 7
+cmd + alt + ctrl - 9                 : komorebic focus-workspace 8
+
+# Move windows across workspaces
+cmd + alt + ctrl + shift - 1         : komorebic send-to-workspace 0
+cmd + alt + ctrl + shift - 2         : komorebic send-to-workspace 1
+cmd + alt + ctrl + shift - 3         : komorebic send-to-workspace 2
+cmd + alt + ctrl + shift - 4         : komorebic send-to-workspace 3
+cmd + alt + ctrl + shift - 5         : komorebic send-to-workspace 4
+cmd + alt + ctrl + shift - 6         : komorebic send-to-workspace 5
+cmd + alt + ctrl + shift - 7         : komorebic send-to-workspace 6
+cmd + alt + ctrl + shift - 8         : komorebic send-to-workspace 7
+cmd + alt + ctrl + shift - 9         : komorebic send-to-workspace 8
